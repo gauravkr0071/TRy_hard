@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
+
+tc= n only;
+
+int main() {
+    int t;
+	cin>>t;
+	while(t--)
+	{   
+	    long long x, y,z;
+	    cin>>x>>y>>z;
+	    //int vector[x];ar2[y],ar3[z];
+	   vector<long long> ar1(x);
+	    vector<long long> ar2(y);
+	     vector<long long> ar3(z);
+	     
+for(int i =0;i<x;i++)
+    cin>>ar1[i];
+    
+for(int i =0;i<y;i++)
+    cin>>ar2[i];
+    
+for(int i =0;i<z;i++)
+    cin>>ar3[i];  
+    
+  
+   unordered_map<long long,int>u2;
+   unordered_map<long long,int>u3;
+  
+     for(int i =0;i<y;i++)
+   {
+       if(u2.find(ar2[i])==u2.end())
+       u2[ar2[i]]=1;
+         
+   }
+     for(int i =0;i<z;i++)
+   {
+       if(u3.find(ar3[i])==u3.end())
+       u3[ar3[i]]=1;
+         
+   }
+   
+   
+    long long prev=INT_MIN;
+    
+    int flag=9;
+    
+ for(int i =0;i<x;i++)
+    {
+        if(i>0&&ar1[i]==prev)
+         continue;
+       
+        
+        if(u3.find(ar1[i])!=u3.end()&&u2.find(ar1[i])!=u2.end())
+          {cout<<ar1[i]<<" ";
+              flag=8;
+             }
+	      
+	   prev=ar1[i];
+    }   
+    if(flag==9)
+	        cout<<-1;
+	    cout<<endl;
+	      
+	}
+	
+	return 0;
+}

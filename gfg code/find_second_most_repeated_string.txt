@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{  int n;
+	  cin>>n;
+	   int i=0;
+	    string str[n];
+	    while(i<n)
+	    {
+	        cin>>str[i++];
+	    }
+	    unordered_map<string , int>u;
+	    
+	    for(int k=0;k<n;k++)
+	    {
+	        if(u.find(str[k])==u.end())
+	        u[str[k]]==1;
+	        else
+	        u[str[k]]++;
+	        
+	    }
+	    int m=INT_MIN ; string key;
+	    for(auto it=u.begin();it!=u.end();it++)
+	    {  
+	        if(m < it->second)
+	          {m=it->second;key=it->first;}
+	          
+	        
+	        
+	    }
+	    
+	    u.erase(key);
+	    m=INT_MIN; //int flag=0;
+	    for(auto it=u.begin();it!=u.end();it++)
+	    {  
+	        if(m < it->second)
+	          {m=it->second;key=it->first;
+	            
+	          }
+	          
+	        
+	        
+	    }
+	    cout<<key<<endl;
+	    
+	    
+	    
+	}
+	return 0;
+}

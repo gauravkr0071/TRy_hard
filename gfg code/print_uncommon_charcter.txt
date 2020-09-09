@@ -1,0 +1,10 @@
+1) in for loop store one string a in unoredered map<char, count>
+2) run a another loop for second string b
+
+if(b[i] is present in map)
+ then reduce count or if count is 1 erase it 
+else 
+  print it
+
+run a another loop for remaining elemnt in
+map which is still present print it

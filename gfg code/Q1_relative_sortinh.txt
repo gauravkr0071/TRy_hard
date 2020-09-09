@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int m,n;
+        cin>>m>>n;
+        int f[m],s[n];
+        for(int i=0;i<m;i++)
+          cin>>f[i];
+        for(int i=0;i<n;i++)
+          cin>>s[i];
+        unordered_map<int , int> u;
+        u.insert(make_pair(f[0],1));
+        for(int i=1;i<m;i++)
+          {
+              if(u.find(f[i])!=u.end())
+              {
+                  auto itr=u.find(f[i]);
+                  itr->second=itr->second+1;
+                  
+              }
+              
+              else
+              {
+                  u[f[i]]=1;
+              }
+          }
+          //int count=0;
+         for(int i=0;i<n;i++)
+         {
+             if(u.find(s[i])!=u.end())
+             {   
+                 auto it=u.find(s[i]);
+                 int x=it->second;
+                 while(x--)
+                 {cout<<it->first<<" ";}
+       
+                 
+                 
+                 
+                   u.erase(it);
+                 
+             }
+             else
+               continue;
+               
+         }
+         int i=0;
+        unordered_map<int,int>:: iterator it;
+        for( it =u.begin();it!=u.end();it++)
+          {
+              int c=it->second;
+              while(c--)
+              f[i++]=it->first;
+              
+              
+              
+          }
+          sort(f,f+i);
+          for(int y=0;y<i;y++)
+            cout<<f[y]<<" ";
+            
+         
+        
+        cout<<endl;  
+        
+    }
+	
+	return 0;
+}

@@ -1,0 +1,51 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int m ;
+	    cin>>m;
+	    long long a[m],b[m];
+	    for(int i=0;i<m;i++)
+	    cin>>a[i];
+	    
+	    for(int i=0;i<m;i++)
+	    cin>>b[i];
+	    
+	    unordered_map<long long , int>u;
+	    
+	    for(int i=0;i<m;i++)
+	       {
+	           if(u.find(a[i])==u.end())
+	             u[a[i]]=1;
+	           else
+	           u[a[i]]++;
+	       }
+	       int f=9;
+	   for(int i=0;i<m;i++)
+	       {    
+	    if(u.find(b[i])==u.end())
+	      {cout<<0<<endl;f=8; break;   }
+	     else{
+	         if(u[b[i]]==1)
+	           {u.erase(b[i]);}
+	           
+	       else
+	       { u[b[i]]--;}
+	     } 
+	      
+	       }
+	   if(f==9)
+	     cout<<1<<endl;
+	   
+	       
+	       
+	       
+	}
+	
+	return 0;
+}

@@ -1,0 +1,35 @@
+#include bitsstdc++.h
+using namespace std;
+
+int main() {
+    int t;
+    cint;
+    
+	while(t--)
+	{
+	    string a,b;
+    cinab;
+    
+    unordered_setcharu;
+    
+    for(int i=0;ib.length();i++)
+        {  if(u.find(b[i])==u.end())
+           u.insert(b[i]);
+        }
+        
+        int flag=8;
+            for(int i=0;ia.length();i++)
+        {
+            if(u.find(a[i])!=u.end())
+                {
+                    couta[i]endl;;
+                    flag=9; break;
+                }
+        }
+        if(flag==8)
+        cout$endl;
+        
+    
+	}
+	return 0;
+}

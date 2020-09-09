@@ -1,0 +1,47 @@
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main() {
+	int t; cin>>t;
+	while(t--)
+	{ int len;
+	  cin>>len;
+	  
+	  
+	  vector<string>vec;
+	  
+	  for(int i=0;i<len;i++)
+	    { string c;
+	    cin>>c;
+	        vec.push_back(c);}
+	        
+	       unordered_map<string,int>u; 
+	   for(int i=0;i<len;i++)
+	   {
+	       if(u.find(vec[i])==u.end())
+	          {u[vec[i]]=1;}
+	          
+	       else 
+	       u[vec[i]]++;
+	   }
+	   int max_c=0; string key; //int firsth=-1;
+	   for(int i=0;i<len;i++)
+	   {  
+	       
+	       if(max_c<=u[vec[i]]&&u[vec[i]]!=-1 )
+	       {
+	           max_c=u[vec[i]];
+	           u[vec[i]]=-1;
+	           key=vec[i];
+	       }
+	   }
+	   
+	   cout<<key<<endl;
+	   
+	   
+	}
+	return 0;
+}
